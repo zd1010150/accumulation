@@ -1,0 +1,22 @@
+{
+  "name": "accumulation",
+  "version": "1.0.0",
+  "description": "300 lines code everyday，come on，kiwi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zd1010150/accumulation.git"
+  },
+  "keywords": [
+    "kiwi"
+  ],
+  "author": "kiwizhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zd1010150/accumulation/issues"
+  },
+  "homepage": "https://github.com/zd1010150/accumulation#readme"
+}
