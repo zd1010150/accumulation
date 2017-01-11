@@ -1,0 +1,61 @@
+
+
+
+
+
+
+@media only screen and (orientation : landscape){
+  div{
+    width:15%;
+    background: red;
+  }
+}
+
+@media only screen and (orientation : portrait) {
+  div{
+    width:40%;
+  }
+}
+
+div{
+  font-size: 24px;
+  color:white;
+  font-weight: bold;
+  float:left;
+  margin:10px;
+}
+.item-1{
+  background-color: pink;
+}
+.item-2{
+  background-color: red;
+
+}
+.item-3{
+  background-color: green;
+
+}
+.item-4{
+  background-color: blue;
+
+}
+.item-5{
+  background-color: orange;
+
+}
+.item-6{
+  background-color: yellow;
+
+}
+.item-7{
+  background-color: purple;
+
+}
+.item-8{
+  background-color: gray;
+
+}
+.item-9{
+  background-color: black;
+
+}
