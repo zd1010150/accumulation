@@ -4,16 +4,28 @@
     <link href="./jquery-month-picker/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdn.rawgit.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
 
     <script src="./jquery-month-picker/MonthPicker.min.js"></script>
     <link rel="stylesheet" href="./jquery-month-picker/MonthPicker.css"/>
+    <style>
+    .right{
+      float:right;
+    }
+    </style>
 </head>
 
 <body>
-    <input id="IconDemo" class='Default' type="text" />
+  <div class="right">
+    <input id="IconDemo" class='Default' type="text" value="04/2017"/>
+  </div>
+
     <script>
-        $('.Default').MonthPicker();
+        $('.Default').MonthPicker({
+          Position : {
+            my:"right top",
+            at:"right+20 bottom"
+          }
+        });
     </script>
 </body>
 

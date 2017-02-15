@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="zepto.js"></script>
+    <img src="2.jpg" class="hidden" alt="">
+    <img src="3.jpg" class="hidden" alt="">
+    <div class="slide">
+        <div class="content">
+            <div class="img-wrapper">
+                <img src="1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    var img_url = [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg"
+    ];
+    (
+        function($) {
+            $(document).ready(function() {
+                var index = 0;
+
+                $(".slide img").on("click", function() {
+                    console.log("click");
+                }).on("touchstart", function(e) {
+                    e.preventDefault();
+                }).on("touchmove", function(e) {
+                    e.preventDefault();
+                }).swipeRight(function() {
+                    console.log("left");
+                    if (index > 0) {
+                        $(this).prop("src", img_url[--index]);
+                    } else {
+                        $(this).prop("src", img_url[0]);
+                    }
+                }).swipeLeft(function() {
+                    console.log("right");
+                    if (index < 2) {
+                        $(this).prop("src", img_url[++index]);
+                    } else {
+                        $(this).prop("src", img_url[2]);
+                    }
+                });
+            });
+
+        }(Zepto));
+    </script>
+</body>
+
+</html>
