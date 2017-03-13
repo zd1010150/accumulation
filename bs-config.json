@@ -1,5 +1,5 @@
 {
   "port": 8789,
-  "files": ["./pages/zepto/*.*"],
-  "server": { "baseDir": "./pages/zepto" }
+  "files": ["./src/vue/*.*"],
+  "server": { "baseDir": "./src/vue" }
 }

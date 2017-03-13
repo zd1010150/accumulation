@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    Hello,{{username}}!
+    I am {{username}}.
+    I am in {{birthplace}}
+    <script>
+        var app = new Vue({
+            el:"body",
+            data:{
+                username:"danzhang",
+                birthplace:"hangzhou"
+            }
+        });
+        
+    </script>
+</body>
+</html>
