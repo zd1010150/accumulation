@@ -1,5 +1,5 @@
 {
   "port": 8789,
-  "files": ["./src/vue/*.*"],
-  "server": { "baseDir": "./src/vue" }
+  "files": ["./src/**/*.*"],
+  "server": { "baseDir": "./src" }
 }
