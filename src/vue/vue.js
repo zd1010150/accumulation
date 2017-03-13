@@ -18,18 +18,19 @@ function _getTemplate(el) {
 
 function Vue(config) {
     var __innerdata = {
-          _data:{}
+            _data: {}
         },
         _el = config.el || "body",
         _data = config.data || {},
         _tempet = _getTemplate(_el);
-        __innerdata.el = _el;
-        __innerdata.tempet = _tempet;
+    __innerdata.el = _el;
+    __innerdata.tempet = _tempet;
     //遍历_data
     for (var i in _data) {
-        tempetInnerKey = "__" + i + "__";
-        __innerdata["_data"][tempetInnerKey] = {};
+
         (function(key) {
+            var tempetInnerKey = "__" + key + "__";
+            __innerdata["_data"][tempetInnerKey] = {};
             Object.defineProperty(__innerdata, key, {
                 set: function(val) {
                     __innerdata["_data"][tempetInnerKey]["val"] = val;
