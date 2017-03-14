@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .flip-card-container {
+        width: 80px;
+        height: 70px;
+        margin: 10px;
+    }
+    
+    .flip-card.show {
+        transform: rotateX(180deg);
+    }
+    
+    .flip-card {
+        width: 80px;
+        height: 70px;
+        margin: 10px;
+        color: red;
+        position: relative;
+        transition: transform 2s linear 0s;
+        transform-style: preserve-3d;
+    }
+    
+    .flip-card .back,
+    .flip-card .front {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 80px;
+        height: 70px;
+        backface-visibility: hidden;
+    }
+    
+    .flip-card .front {
+        background-color: blue;
+    }
+    
+    .flip-card .back {
+        background-color: pink;
+        transform: rotateX(180deg);
+
+    }
+    img{
+    	width:20px;
+    	height:20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="flip-card">
+        <div class="front">this is frone</div>
+        <div class="back">
+			<figure><img src="http://cdn2.ettoday.net/images/750/d750931.jpg" alt=""></figure>
+			<figcaption> XiaoXin</figcaption>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(".flip-card").on("click", function() {
+    $(this).toggleClass("show");
+});
+</script>
+
+</html>
