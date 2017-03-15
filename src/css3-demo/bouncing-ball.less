@@ -1,0 +1,35 @@
+@keyframes ball-bounching {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes topToDown {
+    0% {
+        top: 411px;
+    }
+    80% {
+        top: 541px;
+    }
+    100% {
+        top: 500px;
+    }
+}
+
+.ball {
+    position: absolute;
+    top: 400px;
+    left: 10px;
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    &.bounce {
+        top: 500px;
+        transform: rotate(360deg);
+        animation: ball-bounching 1s linear, topToDown 1s cubic-bezier(0, 2.04, 1, 1.37);
+    }
+}

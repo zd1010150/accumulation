@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bouncing ball</title>
+    <link rel="stylesheet/less" type="text/css" href="bouncing-ball.less" />
+    <script src="../../lib/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="ball">
+        <img src="https://img.clipartfest.com/0e7c71d39d6ebaf75f673a1bfad5221f_soccer-ball-icon-image-26373-soccer-ball-clipart-png_256-256.png" alt="">
+    </div>
+</body>
+<script>
+$(".ball").on("click", function() {
+    $(".ball").toggleClass("bounce");
+});
+</script>
+
+</html>
