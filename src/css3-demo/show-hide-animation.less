@@ -1,0 +1,58 @@
+@keyframes slide-to-right {
+    0% {
+        margin-left: -200px;
+    }
+   
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes slide-to-left {
+    0% {
+        margin-left: 0px;
+    }
+    
+    100% {
+        margin-left: -200px;
+    }
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.animation {
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+#doc {
+    margin-left: -200px;
+    position: relative;
+    .animation;
+    .sidebar {
+        width: 200px;
+        left: 0px;
+        top: 0px;
+        height: 1025px;
+        background-color: blue;
+    }
+    .content {
+        position: absolute;
+        left: 200px;
+        top: 0px;
+        height: 1025px;
+        background-color: pink;
+        width: 100%;
+    }
+    &.show-sidebar {
+        margin-left: 0px;
+        animation-name: slide-to-right;
+    }
+    &.hide-sidebar {
+        margin-left: -200px;
+        animation-name: slide-to-left;
+    }
+}

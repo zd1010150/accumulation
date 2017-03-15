@@ -1,3 +1,4 @@
 /node_modules
 .babelrc
 npm-debug.log
+.DS_Store

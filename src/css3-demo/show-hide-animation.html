@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet/less" type="text/css" href="show-hide-animation.less" />
+    <script src="../../lib/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="doc">
+        <div class="sidebar left-sidebar menus hide">
+            <ul>
+                <li>index</li>
+                <li>about us</li>
+                <li>products</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header toggle-sidebar">
+                &lt;&lt;&lt;
+            </div>
+            thisi is content
+        </div>
+    </div>
+</body>
+<script>
+document.querySelector(".toggle-sidebar").addEventListener("click", function() {
+    var $doc = $("#doc");
+    if ($doc.hasClass("show-sidebar")) {
+        $doc.removeClass("show-sidebar").addClass("hide-sidebar");
+    } else {
+        $doc.removeClass("hide-sidebar").addClass("show-sidebar");
+    }
+});
+</script>
+
+</html>
