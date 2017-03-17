@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <ul>
+            <todo-item v-for="item in todoItems" v-bind:todo="item"></todo-item>
+        </ul>
+        {{ ok ? 'YES' : 'NO' }}
+        {{ "dan zhang lisittt      uuuuddddyy            tttddddddd" | captitalize | deletespec}}
+    </div>
+    <script>
+    Vue.component("todo-item", {
+        props: ["todo"],
+        template: "<li>{{todo.text}}</li>"
+    });
+    var app = new Vue({
+        el: ".app",
+        data: {
+            todoItems: [{
+                text: "study Vue"
+            }, {
+                text: "Oral English"
+            }]
+        },
+        filters: {
+            captitalize: function(value) {
+                if (!value) return ''
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.slice(1)
+            },
+            deletespec:function(value){
+            	if (!value) return ''
+            		var reg = /\s/g;
+                value = value.toString().replace(reg,'');
+                return value.charAt(0).toUpperCase() + value.slice(1)	
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

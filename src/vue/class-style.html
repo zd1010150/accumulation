@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>style-class</title>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="app">
+        <input v-model="isdisplayball">
+        <div class="ball" v-bind:class="{ display : isdisplayball}">
+            <img src="https://img.clipartfest.com/0e7c71d39d6ebaf75f673a1bfad5221f_soccer-ball-icon-image-26373-soccer-ball-clipart-png_256-256.png" alt="">
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                isdisplayball:true
+            }
+        });
+    </script>
+</body>
+</html>

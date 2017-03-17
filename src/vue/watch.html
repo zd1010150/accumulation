@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>watch </title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input v-model="question">
+		<div>{{ answer }}</div>
+
+	</div>
+	<script>
+		var app = new Vue({
+			el:"#app",
+			data:{
+				question:"",
+				answer:"I can't give you an answer untill you key the question"
+			},watch:{
+				question:function(newQuestion){
+					this.answer = "I am waiting for you stop typing questiones";
+					this.getAnswer();
+				}
+
+			},methods:{
+				getAnswer:_.debounce(function(){
+					var vm = this;
+					console.log(this);
+					if(vm.question.indexOf("?") === -1){
+						vm.answer = "every question should have a question mark";
+						return;
+					}
+					vm.answer = "Thinking";
+					axios.get('https://yesno.wtf/api').then(function(response){
+							vm.answer = response.data.answer;
+
+					}).catch(function(){
+							vm.answer = "where is some error";
+					});
+				},500
+				)
+			}
+		});
+	</script>
+</body>
+</html>
