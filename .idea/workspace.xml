@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be42960-a682-4b86-8c15-e3127d2f928c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/images/blue-xiaoxin.jpg" afterPath="$PROJECT_DIR$/css/images/blue-xiaoxin.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/images/white-xiaoxin.png" afterPath="$PROJECT_DIR$/css/images/white-xiaoxin.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css3-demo/flip-card.html" afterPath="$PROJECT_DIR$/src/css3-demo/flip-card.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mobile/hover.html" afterPath="$PROJECT_DIR$/src/mobile/hover.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="double-line-navigation.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="double-line-navigation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="532">
+              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -78,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="double-line-navigation.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="double-line-navigation.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+            <state relative-caret-position="420">
+              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -133,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/vue/watch.html" />
         <option value="$PROJECT_DIR$/src/vue/class-style.html" />
         <option value="$PROJECT_DIR$/src/mobile/hover.html" />
-        <option value="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" />
         <option value="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" />
+        <option value="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" />
       </list>
     </option>
   </component>
@@ -326,12 +321,12 @@
       <option name="presentableId" value="Default" />
       <updated>1489634890951</updated>
       <workItem from="1489634892728" duration="3968000" />
-      <workItem from="1490058181560" duration="2733000" />
+      <workItem from="1490058181560" duration="3026000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6701000" />
+    <option name="totallyTimeSpent" value="6994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="990" extended-state="6" />
@@ -515,21 +510,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html">
+    <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less">
+    <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="532">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
