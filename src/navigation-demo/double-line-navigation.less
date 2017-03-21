@@ -1,0 +1,51 @@
+.double-line-navigation {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  a {
+    text-decoration: none;
+    &:link, &:visited, &:hover, &:active {
+      color: #0099fb;
+    }
+  }
+  .channel {
+    flex: 1;
+    display: inline-block;
+    margin: 10px;
+    transition: color .2s linear;
+    line-height: 40px;
+    padding: 10px 0px;
+    text-align: center;
+    position: relative;
+    &:before, &:after {
+      content: "";
+      height: 2px;
+      background-color: #ffffff;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      transition: transform .3s, opacity .3s;
+      transform:translateY(0px);
+    }
+    &:before {
+      top: 0px;
+    }
+    &:after {
+      bottom: 0px;
+    }
+    &:hover, &.selected {
+      color: #ffffff;
+      &:before, &:after {
+        opacity: 1;
+      }
+      &:before {
+        transform: translateY(10px);
+
+      }
+      &:after {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}

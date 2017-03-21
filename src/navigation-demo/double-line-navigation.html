@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet/less" type="text/css" href="double-line-navigation.less" />
+    <script src="../../lib/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body style="background-color: black;">
+    <div class="double-line-navigation">
+        <a class="channel" href="">home</a>
+        <a class="channel" href="">articles</a>
+        <a class="channel" href="">about us</a>
+        <a class="channel" href="">contact us</a>
+    </div>
+    <script>
+        $(".channel").on("click",function(e){
+            e.preventDefault();
+            var channels = $(".channel");
+            channels.removeClass("selected");
+            $(this).addClass("selected");
+        });
+    </script>
+</body>
+</html>

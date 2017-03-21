@@ -1,0 +1,34 @@
+.popup-login > .popup-wrapper > .content > ul{
+  position: relative;
+  z-index: 1000;
+  transition: transform 2s linear 0s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  transform-origin: 100% 50%;
+  &.show{
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+  & > li{
+    float:none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    width:100%;
+    height:100%;
+
+  }
+  .register-tab{
+    z-index: 1002;
+  }
+  .login-download-tab{
+    z-index: 1001;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+
