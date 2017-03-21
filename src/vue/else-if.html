@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <input type="checkbox" v-model="isLike">do you like
+        <template v-if="isLike">
+            <span>I like</span>
+        </template>
+        <template v-else>
+            <span>i don't like</span>
+        </template>
+    </div>
+    <script>
+
+        var app = new Vue({
+                el: ".app",
+                data:{
+                    isLike:true
+                }
+        });
+    </script>
+</body>
+</html>

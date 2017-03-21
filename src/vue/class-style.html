@@ -8,6 +8,14 @@
     <title>style-class</title>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .textdanger{
+            color:red;
+        }
+        .highlight{
+            background-color: #1c94c4;
+        }
+    </style>
 </head>
 <body>
     <div class="app">
@@ -15,12 +23,19 @@
         <div class="ball" v-bind:class="{ display : isdisplayball}">
             <img src="https://img.clipartfest.com/0e7c71d39d6ebaf75f673a1bfad5221f_soccer-ball-icon-image-26373-soccer-ball-clipart-png_256-256.png" alt="">
         </div>
+        <div class="testbindclass" v-bind:class="testbindclass">
+            <span>test</span>
+        </div>
     </div>
     <script>
         var app = new Vue({
             el:".app",
             data:{
-                isdisplayball:true
+                isdisplayball:true,
+                testbindclass:{
+                    textdanger:true,
+                    highlight:true
+                }
             }
         });
     </script>
