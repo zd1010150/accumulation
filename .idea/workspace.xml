@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3be42960-a682-4b86-8c15-e3127d2f928c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" afterPath="$PROJECT_DIR$/src/navigation-demo/double-line-navigation.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="double-line-navigation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+            <state relative-caret-position="494">
+              <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -321,12 +320,12 @@
       <option name="presentableId" value="Default" />
       <updated>1489634890951</updated>
       <workItem from="1489634892728" duration="3968000" />
-      <workItem from="1490058181560" duration="3026000" />
+      <workItem from="1490058181560" duration="3148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6994000" />
+    <option name="totallyTimeSpent" value="7116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="990" extended-state="6" />
@@ -520,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/navigation-demo/double-line-navigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="494">
+          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
