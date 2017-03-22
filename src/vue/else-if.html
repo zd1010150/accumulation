@@ -10,23 +10,48 @@
 </head>
 
 <body>
-    <div class="app">
-        <input type="checkbox" v-model="isLike">do you like
-        <template v-if="isLike">
-            <span>I like</span>
-        </template>
-        <template v-else>
-            <span>i don't like</span>
-        </template>
-    </div>
-    <script>
+<div class="app">
+    <input type="checkbox" v-model="isLike">
 
-        var app = new Vue({
-                el: ".app",
-                data:{
-                    isLike:true
-                }
-        });
-    </script>
+
+    <template v-if="isLike">
+        <span>I like</span>
+    </template>
+    <template v-else>
+        <span>i don't like</span>
+    </template>
+    <br>
+    <template v-if="loginType === 'username'">
+        <label for="username">username</label>
+        <input type="text" placeholder="please input your username" id="username" key="usename-input">
+
+    </template>
+    <template v-else>
+        <label for="email">email</label>
+        <input type="email" placeholder="please input your email" id="email" key="email-input">
+
+    </template>
+    <br>
+    <button v-on:click="toggleLoginType">toggle login type</button>
+    <br>
+    <div v-show="isLike">
+        do you like Vue?
+    </div>
+</div>
+<script>
+
+    var app = new Vue({
+        el: ".app",
+        data: {
+            isLike: true,
+            loginType: "username"
+        },
+        methods: {
+            toggleLoginType: function () {
+                this.loginType = this.loginType == "username" ? "email" : "username";
+            }
+        }
+    });
+</script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>component-data-prop</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div class="app">
+    总共选择了{{totalQuantity}}件商品，总共{{totalPrice}}元
+    <template v-for="good in goods">
+        <good v-on:count="countTotal" v-bind:good="good"></good>
+    </template>
+
+</div>
+<script>
+    Vue.component("good", {
+        props: {
+            good: {
+                type: Object,
+                required: true
+            }
+        },
+        data: function () {
+            return {
+                name: this.good.name,
+                price: this.good.price,
+                quantity: this.good.quantity || 0,
+                selected:false
+            }
+        },
+        computed: {
+            subTotal: function () {
+                return this.price * this.quantity;
+            },
+            quantity:function(){
+
+            }
+
+        },
+        methods:{
+            toggleCheckGood: function () {
+
+                this.$emit("count", this.selected, this.quantity, this.subTotal);
+
+            }
+        },
+        template: "<dl>" +
+        "<dt><input type='checkbox' v-on:change='toggleCheckGood' v-model='selected'></dt>" +
+        "<dt>name:{{name}}</dt>" +
+        "<dt>price:{{price}}</dt>" +
+        "<dt>quantity: <input v-model.number='quantity'/></dt>" +
+        "<dt>subTotalPrice:{{subTotal}}</dt>" +
+        "</dl>"
+    });
+    var app = new Vue({
+        el: ".app",
+        data: {
+            totalQuantity: 0,
+            totalPrice: 0,
+            goods :[{
+                name:"Kangshifu",
+                price:3.2,
+                quantity:1
+            },{
+                name:"XinLamian",
+                price:5,
+                quantity:2
+            }]
+        },
+        methods: {
+            countTotal: function (isAdd,quantity,subTotal) {
+                if(isAdd){
+                    this.totalQuantity +=quantity;
+                    this.totalPrice+=subTotal;
+                }else{
+                    this.totalQuantity -= quantity;
+                    this.totalPrice-=subTotal;
+                }
+            }
+        }
+
+    });
+</script>
+</body>
+</html>

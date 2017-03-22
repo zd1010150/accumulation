@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        span{
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="app">
+   <ul>
+       <template v-for="(value,key,index) in object">
+           <li><span>{{index}}</span> - <span>{{key}}</span>: <span>{{value}}</span></li>
+       </template>
+   </ul>
+    <ul>
+        <template v-for="profile in profiles">
+            <li><profile v-bind:profile = "profile"></profile></li>
+        </template>
+    </ul>
+    job:
+    <select v-model="job" multiple>
+        <option value="teacher">teacher</option>
+        <option value="doctor">doctor</option>
+        <option value="soldier">soldier</option>
+    </select>
+
+    {{job}}
+    username: <input type="text" v-model.trim="username">
+    {{username}}
+</div>
+<script>
+    Vue.component("profile",{
+        props:["profile"],
+        template:"<span><template v-for='(value,key,index) in profile'><span>{{key}}</span>: <span>{{value}}</span> </template></span>"
+    });
+    var app = new Vue({
+        el: ".app",
+        data: {
+            isLike: true,
+            job:[],
+            username:"",
+            object:{
+                name:"danzhang",
+                sex:"female",
+                age:"16"
+            },
+            profiles:[{
+                name:"danzhang",
+                sex:"female",
+                age:"16"
+            },{
+                name:"danzhang2",
+                sex:"male",
+                age:"18"
+            }]
+        }
+    });
+
+</script>
+</body>
+</html>

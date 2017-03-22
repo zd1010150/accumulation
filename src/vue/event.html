@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        span{
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="app">
+    auto search:<input type="text" v-on:keyup.enter="searchPerson" v-model="keywords">
+    <br>
+    search result:
+    <ul>
+        <li v-for="p in result">{{p}}</li>
+    </ul>
+
+</div>
+<script>
+
+    var app = new Vue({
+        el: ".app",
+        data: {
+            keywords:"",
+            persons:["lisi","wangwu","zhangsan","wanger","wangqi"],
+            result:[]
+        },
+        methods:{
+            searchPerson:function(){
+                var self = this;
+                this.result = this.persons.filter(function(p,index,arr){
+                    return p.indexOf(self.keywords) > -1;
+                });
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
