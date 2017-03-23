@@ -29,7 +29,7 @@
             return {
                 name: this.good.name,
                 price: this.good.price,
-                quantity: this.good.quantity || 0,
+                initQuantity : this.good.quantity || 0,
                 selected:false
             }
         },
@@ -38,7 +38,7 @@
                 return this.price * this.quantity;
             },
             quantity:function(){
-
+                this.$emit("count", this.selected, this.quantity, this.subTotal);
             }
 
         },
@@ -53,7 +53,7 @@
         "<dt><input type='checkbox' v-on:change='toggleCheckGood' v-model='selected'></dt>" +
         "<dt>name:{{name}}</dt>" +
         "<dt>price:{{price}}</dt>" +
-        "<dt>quantity: <input v-model.number='quantity'/></dt>" +
+        "<dt>quantity: <input v-model.number='initQuantity'/></dt>" +
         "<dt>subTotalPrice:{{subTotal}}</dt>" +
         "</dl>"
     });
