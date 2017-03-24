@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>currency filter</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.rawgit.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e/raw/98739fb8ac6779cb2da11aaa9ab6032e52f3be00/currency-validator.js"></script>
+</head>
+
+<body>
+<div class="app">
+    {{price}}
+    <currency-filter v-model="price"></currency-filter>
+</div>
+<script>
+    Vue.component("currency-filter", {
+        props: ["value"],
+        data: function () {
+            var self = this;
+            return {
+                innerPrice: self.value
+            }
+        },
+        template: "<span>$<input v-bind:value='innerPrice' v-on:blur='formatePrice' v-on:input='updatePrice' ref='currency'></span>",
+        mounted: function () {
+            this.formatePrice();
+        },
+        methods: {
+            updatePrice: function ($event) {
+                console.log("****", this.innerPrice);
+                this.formatePrice();
+                this.$emit('input', this.innerPrice);
+            },
+            formatePrice: function () {
+                this.$ref.currency.value  = currencyValidator.format(this.innerPrice);
+            }
+        },
+
+
+    });
+    var app = new Vue({
+        el: ".app",
+        data: {
+            price: "0.2333"
+        },
+        methods: {
+            input: function (price) {
+                console.log("=====", price);
+            }
+        }
+    });
+</script>
+</body>
+</html>
