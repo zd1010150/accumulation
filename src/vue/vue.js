@@ -37,7 +37,7 @@ function Vue(config) {
                     templateReplace(_el, __innerdata["_data"], _tempet);
                 },
                 get: function() {
-                    return __innerdata[tempetInnerKey]["val"];
+                    return __innerdata["_data"][tempetInnerKey]["val"];
                 }
             });
             __innerdata[key] = _data[key];

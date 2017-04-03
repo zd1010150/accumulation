@@ -12,16 +12,16 @@
 
 <body>
 <div class="app">
-    {{price}}
+    {{ price }}
+    this is child component:
     <currency-filter v-model="price"></currency-filter>
 </div>
 <script>
     Vue.component("currency-filter", {
         props: ["value"],
         data: function () {
-            var self = this;
             return {
-                innerPrice: self.value
+                innerPrice: this.value
             }
         },
         template: "<span>$<input v-bind:value='innerPrice' v-on:blur='formatePrice' v-on:input='updatePrice' ref='currency'></span>",
@@ -31,11 +31,11 @@
         methods: {
             updatePrice: function ($event) {
                 console.log("****", this.innerPrice);
-                this.formatePrice();
                 this.$emit('input', this.innerPrice);
             },
-            formatePrice: function () {
-                this.$ref.currency.value  = currencyValidator.format(this.innerPrice);
+            formatePrice: function() {
+                console.log(this.innerPrice);
+                this.$refs.currency.value  = currencyValidator.format(this.innerPrice);
             }
         },
 
@@ -45,11 +45,6 @@
         el: ".app",
         data: {
             price: "0.2333"
-        },
-        methods: {
-            input: function (price) {
-                console.log("=====", price);
-            }
         }
     });
 </script>
