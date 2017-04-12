@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <!-- viewport -->
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <!-- title -->
+    <title>Diamond FlipBook in jQuery ( full area )</title>
+    <!-- add css and js for flipbook -->
+    <script src="js/jquery.js"></script>
+    <script src="js/turn.js"></script>
+    <!-- style css  -->
+    <style>
+    #magazine {
+        width: 800px;
+        height: 800px;
+    }
+    
+    #magazine .turn-page {
+        background-color: #ccc;
+    }
+    img{
+    	width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="popup popup-magazin-small" style=" ">
+            <div class="content" >
+                <ul id="magazine">
+                    <li class="turn-page">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp01.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp02.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp03.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp04.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp05.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp06.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp07.jpg" alt="">
+                        </div>
+                    </li>
+                    <li class="turn-page" class="pages-wrapper" style=" ">
+                        <div class="pinch-zoom">
+                            <img src="./css//magazine/MTp08.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div class="close-btn"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    $('#magazine').turn({gradients: true, acceleration: true});
+    </script>
+</body>
+
+</html>
