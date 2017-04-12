@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>作用域插槽</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <app></app>
+    </div>
+</body>
+<script>
+Vue.component("list",{
+  template:"<div><ul>{{litodos}}"
+    +"<slot name='item' v-for='item in litodos' :text= 'item.text' :time='item.time' :message='message'></slot>"
+    +"</ul>"
+    +"<hr><ul>"
+      +"<li  v-for='item in litodos' >{{item}}</li>"
+      +"</ul></div>",
+  props:['litodos'],
+  data:function(){
+    return {
+      message:"list-message"
+    }
+  }
+});
+
+Vue.component("app",{
+  template:"<div class='container'> "
+  +"<list :litodos='todos'>"
+  +"<template slot='item' scope='props'><li>{{props.message}}{{props.text}} </li></template>"
+  +"</list>"
+  +"</div>",
+  data:function(){
+    return {
+      todos:[
+        {
+          text:'study english',
+          time:'3hour'
+        },{
+          text:'study vue',
+          time:'2hour'
+        }
+      ]
+    };
+  }
+})
+var app = new Vue({
+    el: '#app'
+});
+</script>
+</html>

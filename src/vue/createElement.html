@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>createElement</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <app></app>
+    </div>
+    <script type="text/x-template" id="anchord-headingline">
+      <div>
+        <h1 v-if="level === 1">
+          <slot></slot>
+        </h1>
+        <h2 v-if="level === 2">
+          <slot></slot>
+        </h2>
+        <h3 v-if="level === 3">
+          <slot></slot>
+        </h3>
+        <h4 v-if="level === 4">
+          <slot></slot>
+        </h4>
+        <h5 v-if="level === 5">
+          <slot></slot>
+        </h5>
+      </div>
+    </script>
+</body>
+<script>
+Vue.component("anchordHeadingLine",{
+  template:"#anchord-headingline",
+  props:['level'],
+  data:function(){
+    return {}
+  }
+});
+Vue.component("advancedAnchorHeadingLine",{
+  render:function(createElement){
+    return createElement(
+      'h'+this.level,
+      this.$slots.default
+    );
+  },
+  props:['level']
+});
+Vue.component("app",{
+  template:"<div><advancedAnchorHeadingLine v-bind:level='level'>this is head</advancedAnchorHeadingLine><button v-on:click='add'>+</button></div>",
+  data:function(){
+    return {
+      level:1
+    };
+  },
+  methods:{
+    add:function(){
+      this.level++;
+    }
+  }
+})
+var app = new Vue({
+    el: '#app'
+});
+</script>
+</html>

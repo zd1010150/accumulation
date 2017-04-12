@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      <app></app>
+    </div>
+</body>
+<script>
+
+var editForm ={
+  created:function(){
+    this.$on('save',function(){
+      this.save();
+    })
+  },
+  template:"<form name='editForm'>"
+  +"<span>id:</span><input type='textbox' name='id' disabled/>"
+  + "<span>username:</span><input type='textbox' name='username'/>"
+  + "<span>sex:</span><input type='radio' name='sex' value='male' id='male-radio'/><label for='male-radio'>male</label>"
+  + "<input type='radio' name='sex' value='female' id='female-radio'/><label for='female-radio'>female</label>"
+  + "</form>",
+  data:function(){
+    return {};
+  },
+  methods:{
+    save:function(){
+      console.log("editform save");
+    }
+  }
+};
+var addForm = {
+  created:function(){
+    this.$on('save',function(){
+      this.save();
+    });
+  },
+  template:"<form name='addForm'>"
+  + "<span>username:</span><input type='textbox' name='username'/>"
+  + "<span>sex:</span><input type='radio' name='sex' value='male' id='male-radio'/><label for='male-radio'>male</label>"
+  + "<input type='radio' name='sex' value='female' id='female-radio'/><label for='female-radio'>female</label>"
+  + "</form>",
+  data:function(){
+    return {};
+  },
+  methods:{
+      save:function(){
+        console.log("addform save");
+      }
+  }
+};
+Vue.component("myDialog",{
+  props:["dialogType"],
+  template:"<div class='dialog'>"+
+  "<header>"
+  +"<slot name='header'></slot>"+
+  "</header>"
+  +"<main><keep-alive><component v-bind:is='currentForm' ref='form'></component></keep-alive></main>"+
+  "<slot name='footer'><button v-on:click='save'>保存</button><button>取消</button></slot>"
+  +"</div>",
+  components:{
+    addForm:addForm,
+    editForm:editForm
+  },
+  data:function(){
+    return {
+
+
+    };
+  },
+  computed:{
+    currentForm:function(){
+      switch(this.dialogType){
+        case 'editDialog':
+              return editForm;
+        case 'addDialog':
+              return addForm;
+      }
+    }
+  },
+  methods:{
+    save: function(){
+      this.$refs.form.$emit('save');
+    }
+  }
+});
+Vue.component("app",{
+  template:"<div class='container'> <div><button v-on:click='addOneItem'>add one item</button><button v-on:click='editItem'>edit one item</button></div>"
+  +"<my-dialog v-bind:dialogType='dialog'>"
+  +"</my-dialog>"
+  +"</div>",
+  data:function(){
+    return {
+      dialog:'editDialog'
+    };
+  },
+  methods:{
+    addOneItem:function(){
+      this.dialog = 'addDialog';
+    },
+    editItem:function(){
+      this.dialog='editDialog';
+    }
+  }
+})
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
+});
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="es6.html">es6.html</a>
+      <a href="index.html">index.html</a>
+    <script>
+        window.onpopstate = function(event) {
+            console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+        };
+        history.pushState({
+            data: 1
+        }, "title 1", "?page=new1");
+        history.pushState({
+            data: 2
+        }, "title 2", "?page=new2");
+        // history.replaceState({
+        //     data: 3
+        // }, "title 3", "?page=3");
+        // history.back();
+    </script>
+</body>
+
+</html>

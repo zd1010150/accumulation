@@ -24,18 +24,18 @@
                 innerPrice: this.value
             }
         },
-        template: "<span>$<input v-bind:value='innerPrice' v-on:blur='formatePrice' v-on:input='updatePrice' ref='currency'></span>",
+        template: "<span>${{innerPrice}}<input v-bind:value='innerPrice' v-on:blur='formatePrice' v-on:input='updatePrice' ref='currency'></span>",
         mounted: function () {
             this.formatePrice();
         },
         methods: {
             updatePrice: function ($event) {
-                console.log("****", this.innerPrice);
-                this.$emit('input', this.innerPrice);
+                this.innerPrice = $event.target.value;
+                this.$emit('input', $event.target.value);
             },
             formatePrice: function() {
-                console.log(this.innerPrice);
                 this.$refs.currency.value  = currencyValidator.format(this.innerPrice);
+                this.$emit('input',this.$refs.currency.value );
             }
         },
 

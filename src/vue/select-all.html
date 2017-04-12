@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>作用域插槽</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <app></app>
+    </div>
+</body>
+<script>
+    var SelectAll = {
+        $els: [],
+        checkState: "checked",
+        disabledFilter: ":disabled",
+        parentDataLabel: "_parent_selectall",
+        toggleChild: function(groupName) {
+            var $parent = $(SelectAll['$els'][groupName]['parent']),
+                $children = $(SelectAll['$els'][groupName]['child']);
+            if ($children.length < 1 || $parent.is(SelectAll.disabledFilter)) return;
+            $children.filter(":not(" + SelectAll.disabledFilter + ")").prop(SelectAll.checkState, $parent.prop(SelectAll.checkState)).trigger("change");
+        },
+        toggleParent: function(groupName) {
+            var $parent =$(SelectAll['$els'][groupName]['parent']),
+                $children =$(SelectAll['$els'][groupName]['child']);
+            $parent.prop(SelectAll.checkState, SelectAll.getCheckboxState($children)).trigger("change");
+        },
+        getCheckboxState: function($elem) {
+            var _checkState = true;
+            $elem.each(function() {
+                _checkState = _checkState && $(this).prop(SelectAll.checkState);
+            });
+            return _checkState;
+        }
+    };
+    Vue.directive("selectall", {
+        bind: function(el, binding, vnode, oldVnode) {
+            var arg = binding.arg || "child",
+                value = binding.value,
+                self = this;
+            if (!SelectAll.$els[value]) {
+                SelectAll.$els[value] = {
+                    child: [],
+                    parent: {}
+                };
+            }
+            if (arg === "child") {
+                SelectAll.$els[value][arg].push(el);
+                $(el).on("change", function() {
+                      SelectAll.toggleParent(value);
+                });
+            } else {
+                SelectAll.$els[value][arg] = el;
+                $(el).on("change", function() {
+                      SelectAll.toggleChild(value);
+                });
+            }
+
+
+        },
+        inserted: function(el, binding, vnode, oldVnode) {
+
+        }
+    });
+    Vue.component("list", {
+        template: "<div><ul>" +
+            "<slot name='item' v-for='item in litodos' :text= 'item.text' :time='item.time' :idx='item.idx'></slot>" +
+            "</ul>" +
+            "</div>",
+        props: ['litodos'],
+        data: function() {
+            return {
+                message: "list-message"
+            }
+        }
+    });
+
+    Vue.component("app", {
+        template: "<div class='container'><input type='checkbox'  v-selectall:parent='group0'/>select all page<hr>" +
+            " <input type='checkbox'  v-selectall:parent='group1' v-selectall:child='group0'/>select all gruop1" +
+            "<list :litodos='todos1'>" +
+            "<template slot='item' scope='props'>" +
+            "<li><input type='checkbox' v-bind:value='props.idx'  v-selectall:child='group1'/>{{props.text}} </li>" +
+            "</template>" +
+            "</list>" +
+            " <hr><input type='checkbox'  v-selectall:parent='group2' v-selectall:child='group0'/>select all gruop2" +
+            "<list :litodos='todos2'>" +
+            "<template slot='item' scope='props'>" +
+            "<li><input type='checkbox' v-bind:value='props.idx' v-selectall:child='group2'/>{{props.text}}</li>" +
+            "</template>" +
+            "</list>" +
+            "</div>",
+        data: function() {
+            return {
+                group0: "group0",
+                group1: "group1",
+                group2: "group2",
+                todos1: [{
+                    text: 'study english',
+                    time: '3hour',
+                    idx: '1'
+                }, {
+                    text: 'study vue',
+                    time: '2hour',
+                    idx: '2'
+                }],
+                todos2: [{
+                    text: '学英语',
+                    time: '3hour',
+                    idx: '3'
+                }, {
+                    text: '学js',
+                    time: '2hour',
+                    idx: '4'
+                }]
+            };
+        }
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {}
+    });
+</script>
+
+</html>

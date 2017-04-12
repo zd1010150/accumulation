@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <app></app>
+    </div>
+</body>
+<script>
+Vue.component("myDialog",{
+  template:"<div class='dialog'>"+
+  "<header>"
+  +"<slot name='header'></slot>"+
+  "</header>"
+  +"<main><slot name='hiddenfield'></slot><slot></slot></main>"+
+  "<slot name='footer'><button>保存</button><button>取消</button></slot>"
+  +"</div>",
+  data:function(){
+    return {};
+  },
+  methods:{
+
+  }
+});
+
+Vue.component("app",{
+  template:"<div class='container'> "
+  +"<my-dialog>"
+  +"<div slot='header'>  增加成员  </div>"
+  +"<p>这是主题内容</p>"
+  +"<div slot='footer'>  <button>不要增加了</button></div>"
+  +"</my-dialog>"
+  +"</div>",
+  data:function(){
+    return {};
+  },
+  methods:{
+
+  }
+})
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
+});
+</script>
+</html>
