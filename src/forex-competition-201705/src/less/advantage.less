@@ -1,0 +1,55 @@
+@import "variables.less";
+
+section.advantage {
+  background: #000000 url(../images/advantage-bg.png) no-repeat;
+  background-position: left top;
+  .content {
+    max-width: @max-line-width-px;
+    text-align: left;
+    padding: 110px 10px 160px 396px;
+  }
+
+  .title {
+    color: #ddd648;
+    font-size: 42px;
+    .padding(20, 0, 20, 0);
+
+  }
+  ul {
+    list-style-type: none;
+    color: @white-font-color;
+
+    li {
+      font-size: 28px;
+      padding: 5px 0px;
+    }
+  }
+
+}
+
+[data-dpr="2"], [data-dpr="3"] {
+  section.advantage {
+    background: #000000 url(../images/advantage-bg.png) no-repeat;
+    background-size: 49% auto;
+    background-position: 38% 5%;
+    .content {
+      .padding("40%",50,50,50);
+      text-align: center;
+    }
+
+    .title {
+      font-size: 42px;
+      .padding(20, 0, 40, 0);
+
+    }
+    ul {
+      .padding(0,0,0,80);
+      li {
+        font-size: 30px;
+        padding: 5px 0px;
+        text-align: left;
+      }
+    }
+
+  }
+}

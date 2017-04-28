@@ -1,0 +1,92 @@
+@import "variables.less";
+section.bonus{
+
+background:#ffffff url(../images/bouns-bg.png) no-repeat;
+background-position: right top;
+  background-size: 40% auto;
+  .content{
+
+    &>.wrapper{
+
+      padding-top: 109px;
+      padding-bottom: 100px;
+      margin:auto;
+      .maxWidth(@max-line-width);
+      .title{
+        font-size: 42px;
+        color:#0d50b1;
+      }
+      .sub-title{
+        font-size: 28px;
+        padding:40px 0px 110px;
+      }
+      .cups{
+        ul{
+          list-style-type: none;
+          .flex();
+          li{
+            flex:1;
+            .level,.money{
+              width:100%;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .link,.note{
+        font-size: 18px;
+        text-align: left;
+
+      }
+      .link{
+        padding:15px 70px 10px;
+      }
+      .note{
+        padding:35px 70px 0px;
+      }
+    }
+  }
+}
+[data-dpr="2"],[data-dpr="3"]{
+  section.bonus{
+    background-size: 50% auto;
+    .content{
+
+        .padding(50);
+
+      &>.wrapper{
+        .padding(40,0,40,0);
+        .title{
+          font-size: 42px;
+
+        }
+        .sub-title{
+          font-size: 30px;
+          .padding(40,0,50);
+        }
+        .cups{
+          ul{
+            li{
+              flex:1;
+              .level,.money{
+                font-size: 30px;
+              }
+              img{
+                .width(80);
+              }
+            }
+          }
+        }
+        .link,.note{
+          font-size: 24px;
+        }
+        .link{
+          padding:15px 0px 10px;
+        }
+        .note{
+          padding:35px 0px 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "variables.less";
+section.acy-table{
+  padding-bottom: 100px;
+  article.acy-table{
+    padding-top:100px;
+    &.table-bg{
+      background-color: #000000;
+      background-image: url("../images/table-bg.png");
+      .bg-wrapper{
+        .maxWidth(@max-line-width);
+        text-align: center;
+        margin:auto;
+      }
+    }
+    &.table-no-bg{
+      .maxWidth(@max-line-width);
+      text-align: center;
+      margin:auto;
+    }
+
+    .no-bg-repeat();
+    background-size: 100% 100%;
+    .table-title{
+      color:#ddd648;
+      font-size: 42px;
+      .padding(20,0,0,0);
+    }
+    table{
+      .caption{
+        font-size: 28px;
+      }
+      width:100%;
+      color:rgba(256,256,256,.9);
+      .margin(60,0,20);
+      td{
+        border:3px solid #071423;
+        background-color: rgba(23,147,182,0.5);
+
+        font-size:20px;
+        text-align: center;
+        .padding(10,20);
+      }
+    }
+    .note{
+        color:@white-font-color;
+       font-size:18px;
+      text-align: left;
+      line-height: 2;
+    }
+  }
+}
+[data-dpr="2"],[data-dpr="3"]{
+  section.acy-table{
+    article.acy-table{
+      .padding(20,0,0,0);
+      &.table-bg{
+        .bg-wrapper{
+          .padding(20,50,50,50);
+        }
+      }
+      &.table-no-bg{
+        .padding(50);
+      }
+      .table-title{
+        font-size: 42px;
+        .padding(0,0,0,0);
+
+      }
+      table{
+        td{
+          font-size:30px;
+        }
+      }
+      .note{
+        font-size:24px;
+      }
+
+
+    }
+
+  }
+}

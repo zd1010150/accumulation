@@ -1,0 +1,69 @@
+@bg-color:#ffffff;
+
+@btn-bg-orange-color:#eab96a;
+
+
+@max-line-width:1060;
+@max-line-width-px:1060px;
+@white-font-color:rgba(256,256,256,.9);
+
+@base : 750;
+@unit: rem;
+.px2rem(@name,@value1,...){
+  @value: ~`[].concat(@{value1}).map(function(val){ if(typeof val !== "number"){ return val;} else return val * 320 /@{base} / 20 +"@{unit}"; }).join(" ")`;
+  @{name} : @value;
+}
+
+.height(@value){
+  .px2rem(height,@value);
+}
+.width(@value){
+  .px2rem(width,@value);
+}
+
+.maxWidth(@value){
+  .px2rem(max-width,@value);
+}
+.padding(...){
+  .px2rem(padding,@arguments);
+}
+.margin(...){
+  .px2rem(margin,@arguments);
+}
+.top(@value){
+  .px2rem(top,@value);
+}
+.left(@value){
+  .px2rem(left,@value);
+}
+.bottom(@value){
+  .px2rem(bottom,@value);
+}
+.right(@value){
+  .px2rem(right,@value);
+}
+.backgroundSize(...){
+  .px2rem(background-size,@arguments)
+}
+
+
+.no-bg-repeat(){
+  background-repeat: no-repeat;
+}
+.flex(){
+  display:-webkit-flex;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.hidden{
+  display: none;
+}
+.unvisible{
+  visibility: hidden;
+}
