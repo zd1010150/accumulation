@@ -1,0 +1,184 @@
+@import "variables.less";
+
+section.flow {
+
+  background: url(../images/flow-bg.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  .content {
+    .maxWidth(@max-line-width);
+    margin: auto;
+    padding: 133px 0px 78px 0px;
+    .title {
+      color: #ddd648;
+      font-size: 42px;
+      .padding(20, 0, 30, 0);
+      letter-spacing: 10px;
+    }
+    ul {
+      background: url("../images/bar-bg.png") no-repeat;
+      background-position: center;
+      padding: 20px 0px;
+      width: 100%;
+      list-style-type: none;
+      li {
+        height: 225px;
+        .step-wrapper {
+          width: 100%;
+          .step {
+            box-sizing: content-box;
+            margin-top: 0px;
+            height: 100px;
+            width: 40%;
+            font-size: 28px;
+            background-color: rgba(256, 256, 256, .3);
+            border: 1px solid #9da8b6;
+            border-radius: 20px;
+            padding: 40px 20px;
+            p:first-child {
+              color: #ddd648;
+
+            }
+            p:nth-child(2) {
+              color: @white-font-color;
+            }
+          }
+          .step-left {
+            float: left;
+            &:after {
+              position: relative;
+              content: "";
+              width: 0;
+              height: 0;
+              border-right: 39px solid rgba(255, 255, 255, .3);
+              border-bottom: 39px solid transparent;
+              transform: rotate(45deg);
+              display: block;
+              left: 100%;
+              top: 50%;
+              margin-top: -25%;
+            }
+          }
+          .step-right {
+            float: right;
+            &:after {
+              position: relative;
+              content: "";
+              width: 0;
+              height: 0;
+              border-right: 39px solid rgba(255, 255, 255, .3);
+              border-bottom: 39px solid transparent;
+              transform: rotate(-135deg);
+              display: block;
+              left: -9%;
+              top: -50%;
+            }
+          }
+          .last-step {
+            margin-top: 64px;
+            &:after {
+              top: 17%;
+            }
+          }
+          .first-step {
+            background-image: url("../images/first-step.png");
+            .no-bg-repeat;
+            margin-top: -20px;
+          }
+          .second-step {
+            background-image: url("../images/second-step.png");
+            .no-bg-repeat;
+          }
+          .third-step {
+            background-image: url("../images/third-step.png");
+            .no-bg-repeat;
+          }
+          .first-step, .second-step, .third-step {
+            background-size: 60px 60px;
+            background-position: 20px center;
+          }
+        }
+      }
+    }
+
+  }
+  .footer{
+    text-align: center;
+    padding:20px 20px 30px;
+    button{
+      border-color: #08c;
+      background-color: #08c;
+      background-image: -webkit-linear-gradient(top,rgba(255,255,255,.2) 0,rgba(255,255,255,.01) 100%);
+      background-image: -o-linear-gradient(top,rgba(255,255,255,.2) 0,rgba(255,255,255,.01) 100%);
+      background-image: linear-gradient(to bottom,rgba(255,255,255,.2) 0,rgba(255,255,255,.01) 100%);
+      background-repeat: repeat-x;
+      color: #fff !important;
+      font-size:24px;
+      border: medium none !important;
+      border-radius: 6px !important;
+      font-size: 20px;
+      line-height: 56px;
+      padding: 0 32px !important;
+      &:hover{
+        border-color: #0074ad;
+        background: #0074ad;
+      }
+    }
+  }
+}
+
+[data-dpr="2"], [data-dpr="3"] {
+  section.flow {
+
+    .content {
+      .padding(50,50,0,50);
+      .title {
+        font-size: 42px;
+        .padding(20, 0, 0, 0);
+        letter-spacing: 10px;
+      }
+      ul {
+        background: none;
+        width: 100%;
+
+        li {
+          height: 280px;
+          display: flex;
+          justify-content: center;
+          .step-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0px;
+            margin-top: 28px;
+            font-size: 30px;
+            .step {
+              float: none;
+              width:400px;
+              height:160px;
+              padding:40px;
+              margin:0px;
+              &:after {
+                display: none;
+              }
+              p{
+                padding:10px;
+                &:first-child{
+                  border-bottom: 2px solid rgba(6,28,92,.7);
+                }
+              }
+            }
+            .first-step, .second-step, .third-step {
+              background-image: none;
+            }
+
+          }
+        }
+      }
+
+    }
+    .footer{
+      .padding(0,0,50,0);
+    }
+  }
+}

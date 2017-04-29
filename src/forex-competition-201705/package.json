@@ -1,0 +1,32 @@
+{
+  "name": "acyfx-wordpress",
+  "version": "1.1.11",
+  "description": "to placing the static files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@c7git.acy.svr:acy/acywp.git"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "html",
+    "landingpage"
+  ],
+  "author": "acyfx",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.2",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-less": "^3.3.0",
+    "gulp-minify": "0.0.15",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2",
+    "lite-server": "^2.2.2"
+  }
+}
