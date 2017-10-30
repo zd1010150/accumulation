@@ -29,5 +29,8 @@
     "babel-preset-latest": "^6.16.0",
     "gulp-concat": "^2.6.1",
     "lite-server": "^2.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
