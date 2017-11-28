@@ -1,0 +1,29 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue版的todolist</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="addTodo" v-if="!isAddingTodo">添加todo</button>
+    <button-say words="hello ,kitman"></button-say>
+    <br>
+    <form v-if="isAddingTodo">
+      你想要做什么？<input type="text" v-model="model.thing"><br>
+      在什么时候？<input type="time" v-model="model.startTime">
+      <button @click.prevent = "saveTodoList">保存</button>
+    </form>
+    <br>
+    <h2 v-if="todoList.length > 0">我要做以下事情:</h2>
+    <h2 v-else>你还没有任何事情可以做</h2>
+    <ul>
+      <li v-for="todo in todoList">
+        {{ todo.startTime }} {{ todo.thing}} <button @click="deleteTodo(todo.id)"> X</button>
+      </li>
+    </ul>
+  </div>
+  <script src="./vue.js"></script>
+</body>
+</html>

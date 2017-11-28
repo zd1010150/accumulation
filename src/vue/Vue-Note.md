@@ -89,8 +89,15 @@ this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
 ```
 * 使用render方法来从底层控制整个组件的渲染和事件处理
 * Vue Plugin
-  * Vue plugin is used for adding some
-
+  * Vue plugin is used for adding some global directive,component,router etc
+* Vuex
+  * 可以在root component中注入store，那么所有的子component都可以通过`this.$store`获取。
+* Vue-roter
+  * 导航全局钩子，可以用于权限控制
+  * [命名视图](http://router.vuejs.org/zh-cn/essentials/named-views.html)用于解决一个视图下面有很多组件
+  * [嵌套路由](http://router.vuejs.org/zh-cn/essentials/nested-routes.html)用于在组件中动态展示不同的内容，`router`的`children`属性
+  * `state,getter,mutation,actions`注意之间的差别，其中`actions`可以用于异步获取数据，但是mutation不可以
+  * [如何异步获取数据,存储在vuex](http://vuex.vuejs.org/en/actions.html)
 ## Tips:
 * 不要在dom属性中使用Mustache **{{}}**,而应该使用 **v-bind**
 *

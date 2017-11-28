@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM版的todolist</title>
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+</head>
+<body>
+  <button id="addBtn">添加todo</button>
+  <br>
+  <form id="newTodoForm">
+    你想要做什么？<input type="text" name="thing"><br>
+    在什么时候？<input type="time" name="startTime">
+    <button id="saveTodoList">保存</button>
+  </form>
+  <br>
+  <h2>我要做以下事情:<h2>
+  <ul id="todoList">
+
+  </ul>
+  <script src="./dom.js"></script>
+</body>
+</html>
