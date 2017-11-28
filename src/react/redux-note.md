@@ -1,3 +1,4 @@
+[https://github.com/reactjs/redux.git](https://github.com/reactjs/redux.git)
 ### reducer
 reducer 一定是纯函数，没有任何副作用，不会修改传入的变量，不会调用Date.now(),Math.random(),
 或者异步调用，或者路由转换
