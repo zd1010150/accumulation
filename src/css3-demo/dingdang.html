@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport"
+	      content = "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+	<meta name="viewport" content="width=1280"/>
+	<title>Document</title>
+	<link rel = "stylesheet" href = "dingdang.css">
+</head>
+<body>
+<div class="wrapper">
+	<div class="face-blue-layer"></div>
+	<div class="eye eye-left"></div>
+	<div class="eye eye-right"></div>
+	<div class="face-white-layer">
+		<div class="nose"></div>
+		<div class="mouth-wrapper"></div>
+	</div>
+	<ul class="moustache moustache-left">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul class="moustache moustache-right">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<canvas id="mouth-1" class="up-lip"></canvas>
+	<canvas id="mouth-2" class="up-lip"></canvas>
+	<div class="bond"></div>
+</div>
+<script>
+    
+    function drawShape(ctx, xoff, yoff) {
+        ctx.beginPath();
+        ctx.moveTo(135 + xoff, 43 + yoff);
+        ctx.bezierCurveTo(110 + xoff, 25 + yoff, 76 + xoff, 34 + yoff, 77 + xoff, 52 + yoff);
+        ctx.bezierCurveTo(71 + xoff, 72 + yoff, 77 + xoff, 89 + yoff, 86 + xoff, 97 + yoff);
+        ctx.bezierCurveTo(72 + xoff, 92 + yoff, 95 + xoff, 108 + yoff, 112 + xoff, 116 + yoff);
+        ctx.bezierCurveTo(114 + xoff, 121 + yoff, 156 + xoff, 125 + yoff, 169 + xoff, 119 + yoff);
+        ctx.bezierCurveTo(154 + xoff, 119 + yoff, 275 + xoff, 90 + yoff, 290 + xoff, 105 + yoff);
+        ctx.stroke();
+    }
+    let canvas = document.getElementById("mouth-1");
+    ctx = canvas.getContext("2d")
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#000";
+    //drawShape(ctx,0,0);
+    let canvas2 = document.getElementById("mouth-2");
+    ctx2 = canvas2.getContext("2d")
+    ctx2.lineWidth = 2;
+    ctx2.strokeStyle = "#000";
+    //drawShape(ctx2,0,0);
+</script>
+</body>
+</html>
